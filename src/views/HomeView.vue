@@ -1,16 +1,17 @@
+
 <template>
   <div class="home-container">
     <!-- Fixed Logo -->
-<nav class="navbar">
-  <div class="navbar-left">
-    <img src="@/assets/Gurutattva-Logo-Regi.png" alt="NGO Logo" class="logo" />
-  </div>
-  <div class="navbar-right">
-    <a href="#gallery">Events</a>
-    <a href="#gurukarya">Gurukarya</a>
-    <a href="#ashramprog">Our Ashrams</a>
-  </div>
-</nav>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <img src="/Gurutattva-Logo-Regi.png" alt="Swamiji" class="logo" />
+    </div>
+    <div class="navbar-right">
+      <a href="#gallery">Events</a>
+      <a href="#gurukarya">Gurukarya</a>
+      <a href="#ashramprog">Our Ashrams</a>
+    </div>
+  </nav>
 
 <section class="hero-section" @wheel.prevent="handleScroll">
   <!-- Fullscreen Slider with Content -->
@@ -19,13 +20,11 @@
       <!-- Slide 1: Guru Photo & Message -->
       <div class="slide guru-slide">
         <div class="guru-content">
-          <img src="@/assets/swamiji2.jpg" alt="Shree Shivkrupanand Swami" class="guru-photo" />
+          <img src="/Swamiji2.jpg" alt="Shree Shivkrupanand Swami" class="guru-photo" />
           <div class="guru-text">
             <h1>Shree Shivkrupanand Swami</h1>
             <p>
-              “Experience true inner peace through meditation.”  
-              <br />
-              A visionary spreading ancient wisdom for modern lives.
+A Guru is an element through which the universal consciousness or Chaitanya flows, just like the 5 elements or Tattvas of life. We welcome you to immerse yourself in the teachings of H. H. Shree Shivkrupanand Swamiji and join the ever-growing family of millions of Sadhaks around the world.
             </p>
           </div>
         </div>
@@ -34,16 +33,16 @@
       <!-- Slide 2: Placeholder for your custom content -->
       <div class="slide">
         <div class="custom-content">
-          <h2>Your Next Slide Title</h2>
-          <p>Place your own content here — text, images, or CTA buttons.</p>
+          <h2>Samarpan</h2>
+          <p>समर्पण ८०० साल पुराने हिमालय के ध्यान का एक संस्कार है जो मुझे गुरुकृपा में प्राप्त हुआ है।
+Samarpan means ‘to surrender’. Samarpan Meditation isn’t a technique. It’s a divine sanskaar that’s received by a sadhak from the guru. Swamiji himself was a disciple of many Himalayan gurus for 16 years. His journey from being a sadhak to a guru is a remarkable tale of adventures, discoveries and learnings.</p>
         </div>
       </div>
 
       <!-- Add more slides below -->
+       
     </div>
-  </div>
-
-  <!-- Slide Indicators -->
+      <!-- Slide Indicators -->
   <div class="slide-indicators">
     <span
       v-for="(_, index) in totalSlides"
@@ -52,19 +51,11 @@
       @click="currentSlide = index"
     ></span>
   </div>
-</section>
-<section id="cta" class="cta-section">
-  <div class="cta-wrapper">
-    <h2>Be a Part of Gurukarya</h2>
-    <p>Choose your way to contribute to Swamiji's mission</p>
-
-    <div class="cta-buttons">
-      <button @click="scrollToSection('donation')">💖 Donate</button>
-      <button @click="scrollToSection('blog')">📖 Lekh</button>
-      <button @click="scrollToSection('contactus')">🤝 Join Us</button>
-    </div>
   </div>
+
+
 </section>
+
 
 
 
@@ -102,26 +93,45 @@
         </div>
       </div>
     </section>
+<section id="cta" class="cta-section">
+  <div class="cta-wrapper">
+    <h2>Be a Part of Gurukarya</h2>
+    <p>Choose your way to contribute to Swamiji's mission</p>
 
+    <div class="cta-buttons">
+      <button @click="scrollToSection('donation')">💖 Donate</button>
+      <button @click="scrollToSection('blog')">📖 Lekh</button>
+      <button @click="scrollToSection('contactus')">🤝 Join Us</button>
+    </div>
+  </div>
+</section>
     <!-- Dynamic Sections -->
+  <section id="aboutus" class="section-wrapper">
+      <AboutUs />
+    </section>
+    <section id="gurukarya" class="section-wrapper">
+      <GuruKarya />
+    </section>
+       <section id="ashramprog" class="section-wrapper">
+      <AshramProgress />
+    </section>
     <section id="donation" class="section-wrapper">
       <Donation />
     </section>
 
-    <section id="blog" class="section-wrapper">
+       <section id="blog" class="section-wrapper">
       <Blog />
     </section>
-
+ <section id="awardrecog" class="section-wrapper">
+      <AwardsRecog />
+    </section>
+     <section id="testimonials" class="section-wrapper">
+      <Testimonials />
+    </section>
     <section id="gallery" class="section-wrapper">
       <Gallery />
     </section>
-    <section id="gurukarya" class="section-wrapper">
-      <GuruKarya />
-    </section><section id="ashramprog" class="section-wrapper">
-      <AshramProgress />
-    </section><section id="awardrecog" class="section-wrapper">
-      <AwardsRecog />
-    </section>
+  
     <section id="contactus" class="section-wrapper">
       <ContactUs />
     </section>
@@ -140,7 +150,8 @@ import Testimonials from './Testimonials.vue'
 import GuruKarya from './GuruKarya.vue'
 import AshramProgress from './AshramProgress.vue'
 import AwardsRecog from './AwardsRecog.vue'
-
+import AboutUs
+ from './AboutUs.vue'
 const currentSlide = ref(0)
 
 const totalSlides = 2 // Add more as you add slides
@@ -195,10 +206,64 @@ const handleScroll = (event) => {
 </script>
 
 <style scoped>
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 1.5rem;
+  padding-right: 1.5rem; /* ✅ Add right padding */
+}
+.navbar-left {
+  display: flex;
+  align-items: center;
+  max-width: 40%;
+}
+
+.logo {
+  height: 50px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.navbar-right a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-right a:hover {
+  color: #c62828;
+}
+
+/* Mobile Responsive */
+@media (max-width: 500px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-right {
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
 .hero-section {
   position: relative;
   overflow: hidden;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
 }
 
@@ -241,21 +306,20 @@ const handleScroll = (event) => {
   max-height: 300px;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .guru-text h1 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #8b0000;
   margin-bottom: 0.5rem;
 }
 
 .guru-text p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #444;
-  max-width: 600px;
+  max-width: 800px;
 }
-
 /* Placeholder slide */
 .custom-content {
   text-align: center;
@@ -272,7 +336,7 @@ const handleScroll = (event) => {
   margin: 1rem auto;
 }
 
-/* Indicators */
+/* Slide Indicators */
 .slide-indicators {
   position: absolute;
   bottom: 50px;

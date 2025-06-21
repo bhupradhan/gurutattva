@@ -17,8 +17,10 @@
 
 <script setup>
 const videos = [
-  'https://www.youtube.com/embed/dQw4w9WgXcQ', // Example
-  'https://www.youtube.com/embed/3GwjfUFyY6M'
+  'https://www.youtube.com/embed/gXWWiamM9_E', // Example
+  'https://www.youtube.com/embed/dJ_xqZhdjf8',
+  'https://www.youtube.com/embed/Is0bVhKVM24',
+
 ]
 </script>
 
